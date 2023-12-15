@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Electrolize', sans-serif;
+}
+
+:root {
+    --logo-color: rgb(255, 70, 70);
+    --paragraphy: rgba(255, 255, 255, 0.5);
+    --help-btn: rgba(145, 142, 142, 0.5);
+    --main-color: rgba(40, 40, 40, 0.4);
+}
+
+#container {
+    background-color: black;
+    color: white;
+}
+
+#container.active {
+    background-color: white;
+}
+
+/*! Header Start */
+#header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 20px 0;
+    margin-left: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#header.active {
+    background-color: white;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--logo-color);
+}
+
+/*TODO Menu List Start */
+.menu-list {
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+}
+
+.menu-list a.active {
+    color: black;
+}
+
+.menu-list-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-list-item a:hover {
+    font-weight: 600;
+    text-shadow: 0 0 5px  white;
+}
+
+.menu-list #main-pace {
+    font-weight: 600;
+    text-shadow: 0 0 5px  white;
+}
+
+/*TODO Menu List End */
+
+/*TODO Profile Container Start */
+.profile-container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.profile-container.active {
+    color: black;
+}
+
+.profile-picture {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
+.profile-text-container i {
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+.dark-light-mode {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40px;
+    height: 20px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.dark-light-mode.active {
+    background-color: black;
+}
+
+.dark-light-mode i {
+    color: goldenrod
+}
+
+#round-btn {
+    height: 18px;
+    width: 18px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    transition: .5s ease all;
+}
+
+#round-btn.active {
+    transform: translateX(-20px);
+    background-color: white;
+}
+/*TODO Profile Container End */
+/*! Header End */
+
+/*! Sidebar Start */
+#sidebar {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 50px;
+    height: 100vh;
+    padding-top: 75px;
+}
+
+#sidebar.active {
+    background-color: white;
+}
+
+#sidebar i {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+#sidebar i.active {
+    color: black;
+}
+
+#sidebar i:hover {
+    color: var(--logo-color);
+    transition: all .4s;
+}
+/*! Sidebar End */
+
+/*! Main Start */
+/*TODO Picture Start */
+.picture {
+    background-image: url('img/1771545.jpg');
+    background-size: 100% 100%;
+    margin-left: 50px;
+    height: calc(100vh - 75px);
+    position: relative;
+    background-attachment: fixed;
+}
+
+.picture.active {
+    background-image: url('img/spiderman.jpg');
+}
+
+.picture div:nth-child(1) {
+    padding: 0 50px;
+}
+
+#title {
+    background-image: url('img/2457_the-dark-knight-prev.png');
+    background-size: 100% 100%;
+    height: 25vh;
+    width: 38vw;
+    position: relative;
+    right: 70px;
+}
+
+#title.active {
+    background-image: url('img/spiderman-title.png');
+    right: 0;
+}
+
+.part {
+    position: absolute;
+    top: 23%;
+}
+
+.part.active {
+    top: 28%
+}
+
+.picture p {
+    background: var(--paragraphy);
+    padding: 10px;
+    line-height: 22px;
+    width: 600px;
+    color: black;
+}
+
+.btns {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.btns button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btns i {
+    padding-right: 10px;
+}
+
+.btns #play {
+    background-color: white;
+    color: black;
+}
+
+.btns #help {
+    background-color: var(--help-btn);
+    color: white;
+}
+/*TODO Picture End */
+
+/*TODO Select Btn Start */
+.select-menu {
+    width: 200px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+
+.select.active {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.select {
+    background-color: black;
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options-list {
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    border-radius: 6px;
+    margin-top: 12px;
+    padding: 0 20px;
+    max-height: 120px;
+    height: 0;
+    overflow-y: auto;
+}
+
+.options-list.click.active {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.options-list.click {
+    height: 120px;
+    border: 1px solid white;
+}
+
+.option {
+    padding: 8px 0;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.option:hover,
+.option.selected {
+    font-weight: 600;
+    text-shadow: 0 0 5px  white;
+}
+/*TODO Select Btn End */
+
+/*TODO Movie List Start */
+.movies-container {
+    margin-left: 70px;
+}
+
+.movie-list-title {
+    font-size: 35px;
+}
+
+.movie-list-title.active {
+    color: black;
+}
+
+.movie-list {
+    list-style: none;
+    display: flex;
+    column-gap: 30px;
+    padding: 0;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: 1s all ease-in-out;
+}
+
+.movie-type.active {
+    background-color: white;
+}
+
+.movie-item {
+    position: relative;
+}
+
+.movie-item:hover .movie-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: .5;
+}
+
+.movie-item-img {
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+/*? Movie Item Info Start */
+.movie-item:hover .movie-item-info {
+    display: block;
+}
+
+.movie-item-info {
+    display: none;
+    color: white;
+}
+
+.movie-item:hover .movie-item-title,
+.movie-item:hover .movie-item-buttons {
+    opacity: 1;
+}
+
+.movie-item-title {
+    background-color: var(--main-color);
+    padding: 0 10px;
+    opacity: 0;
+    font-size: 28px;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    font-weight: bold;
+    transition: 1s all ease-in-out;
+    max-width: 200px;
+    text-align: center;
+}
+
+.movie-item-buttons {
+    display: flex;
+    padding: 10px;
+    background-color: var(--main-color);
+    column-gap: 20px;
+    position: absolute;
+    bottom: 10%;
+    left: 50px;
+    font-weight: bold;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-item-buttons i {
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0.5;
+    transition: 0.5s all ease;
+}
+
+.movie-item-buttons i:hover {
+    opacity: 1;
+}
+/*? Movie Item Info End */
+
+.arrow {
+    width: 100px;
+    display: flex;
+    font-size: 120px;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    opacity: .5;
+    transition: .5s ease all;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.arrow.active {
+    color: black;
+}
+/*TODO Movie List End */
+/*! Main End */

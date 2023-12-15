@@ -1,0 +1,33 @@
+/*! Responsive Start */
+@media (max-width: 800px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .profile-container {
+        right: -30px;
+    }
+    
+    .picture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #title {
+        display: none;
+    }
+
+    .picture p {
+        width: 400px;
+    }
+
+    .btns {
+        gap: 17px;
+    }
+}
+/*! Responsive End */
