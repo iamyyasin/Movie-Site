@@ -1,24 +1,28 @@
-//! Transform Start
+//! Slider Start
 const arrows = document.querySelectorAll(".arrow");
 const movieLists = document.querySelectorAll(".movie-list");
+let clickCounter = 0;
 
 arrows.forEach((arrow, i) => {
-  const widthRatio = Math.floor(window.innerWidth / 300);
-  let clickCounter = 0;
-  const imageItem = movieLists[i].querySelectorAll("img").length;
-  arrow.addEventListener("click", function () {
-    clickCounter++;
-    if (imageItem - (4 + clickCounter) + (4 - widthRatio) >= 0) {
-        movieLists[i].style.transform = `translateX(${
-          movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
-        }px)`;
-    } else {
-      movieLists[i].style.transform = "translateX(0)";
-      clickCounter = 0;
+    const ratio = Math.floor(window.innerWidth / 300);
+    const images = movieLists[i].querySelectorAll('img');
+    arrow.addEventListener('click', () => {
+        if(ratio + clickCounter < images.length) {
+            clickCounter = (clickCounter + 1) % images.length;
+            updateSlidePosition();
+        } else {
+            movieLists[i].style.transform = `translateX(0)`;
+            clickCounter = 0;
+        }
+    });
+
+    function updateSlidePosition() {
+        const slideWidth = images[0].offsetWidth + 30;
+        console.dir(slideWidth);
+        movieLists[i].style.transform = `translateX(-${slideWidth * clickCounter}px)`;
     }
-  });
 });
-//! Transform End
+//! Slider End
 
 //! Dark Light Mode Start
 const roundBtn = document.getElementById('round-btn');
@@ -37,7 +41,7 @@ function roundMode() {
 //! Select Box Start
 const select = document.querySelector('.select');
 const options_list = document.querySelector('.options-list');
-const options = document.querySelector('.option');
+const options = document.querySelectorAll('.option');
 
 select.addEventListener('click', () => {
     options_list.classList.toggle('click');
